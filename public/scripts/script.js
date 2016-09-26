@@ -1,5 +1,6 @@
 var myApp=angular.module( 'myApp', [] );
 myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http ){
+  console.log('NG');
   $scope.addRecord = function(){
     event.preventDefault();
     var objectToSend ={

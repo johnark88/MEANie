@@ -34,15 +34,17 @@ app.listen( 8080, 'localhost', function( req, res ){
   console.log( 'listening on 8080' );
 });//end app.listen
 
+//app.post testpost
 app.post( '/testPost', function( req, res ){
-  console.log( 'req.body.name: ' + req.body.name );
+  console.log( 'req.body.name: ' + req.body.name);
+
   // retrieved the req.body
   // putting it into an object to be saved in the db
   var recordToAdd={
     name: req.body.name,
     location: req.body.location
-  };
-  
+  };//end recordToAdd object
+  console.log(recordToAdd,'add add add');
   // create new record
   var newRecord=ourModel( recordToAdd );
   newRecord.save();
