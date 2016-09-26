@@ -3,6 +3,7 @@ myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http )
   console.log('NG');
   $scope.addRecord = function(){
     event.preventDefault();
+    
     var objectToSend ={
       name: $scope.nameIn,
       location: $scope.locationIn,

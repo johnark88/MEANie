@@ -13,6 +13,7 @@ var ourSchema = new  mongoose.Schema({
   location: String
 });
 var ourModel = mongoose.model( 'ourModel', ourSchema );
+//app.get path.resolve
 app.get( '/', function( req, res ){
   res.sendFile( path.resolve( 'public/index.html' ) );
 });
