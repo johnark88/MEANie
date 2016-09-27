@@ -3,7 +3,7 @@ myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http )
   console.log('NG');
   $scope.addRecord = function(){
     event.preventDefault();
-    
+
     var objectToSend ={
       name: $scope.nameIn,
       location: $scope.locationIn,
@@ -27,4 +27,15 @@ myApp.controller( 'whereMyPeeps', [ '$scope', '$http', function( $scope, $http )
       console.log( response.statusText );
     });
   };//end scope.getRecords
+
+  $scope.deleteRecord = function (id){
+    $http({
+      method: 'DELETE',
+      url: '/delete/' + id
+    }). then (function(response){
+        console.log('deleted : ', response);
+    });
+
+  };//end scope.delete
+
 }]);//end whereMyPeeps controller

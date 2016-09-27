@@ -50,5 +50,19 @@ app.post( '/testPost', function( req, res ){
   var newRecord=ourModel( recordToAdd );
   newRecord.save();
 });
+app.delete('/delete/:id', function(req,res){
+console.log('params :', req.params);
+ourModel.remove({"_id " : req.params.id}, function(err){
+if (err) {
+  console.log(err);
+  res.sendStatus(500);
+}else {
+  console.log('connected to the DB!');
+  res.sendStatus(200);
+}
+});// .remove record
+
+
+});//end app. delete
 
 app.use( express.static( 'public' ) );

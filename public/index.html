@@ -16,8 +16,9 @@
       <button ng-click='addRecord()'>Add</button>
       <button ng-click='getRecords()'>Read</button>
       <div ng-repeat="person in allTheRecords"</div>
-        <p>Name:{{person.name}}</p>
+        <p>Name:  {{person.name}}</p>
         <p>Location: {{person.location}}</p>
+        <input type="button" ng-click="deleteRecord(person._id)" value="Delete">
         ---------------------------------------
     </div>
   </body>
